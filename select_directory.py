@@ -4,7 +4,7 @@ from tkinter import filedialog
 def select_file():
     select_window = tk.Tk()
     select_window.withdraw()  # Hide the root window
-    file_path = filedialog.askopenfilenames()
+    file_path = list(filedialog.askopenfilenames())
     return file_path
 #function to select the file saving directory
 def save_file():
