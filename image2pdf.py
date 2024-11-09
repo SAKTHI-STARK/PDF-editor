@@ -16,6 +16,3 @@ def convert_img_to_pdf():
         f.write(i2p.convert(file,page_size=page_size))
              
             
-
-read_file()
-convert_img_to_pdf()

@@ -12,6 +12,7 @@ def add_pages():
     new_file=sd.select_file()
     pdf_files.extend(new_file)
     print(pdf_files)
+    merge_pdfs(pdf_files)
 #function to merge the multiple pdf into one
 def merge_pdfs(pdf_list):
     print(pdf_list)
@@ -22,3 +23,5 @@ def merge_pdfs(pdf_list):
         pdf_merger.write(output_file)
 
 
+select_pdf()
+add_pages()

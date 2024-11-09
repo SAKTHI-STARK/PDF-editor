@@ -11,5 +11,4 @@ def split_pdf(input_pdf, start_page, end_page):
     #saving the newly created pdf file
     with open(sd.save_file(), 'wb') as output_file:
         pdf_writer.write(output_file)
-
 split_pdf(sd.select_file(), 1, 6)  
