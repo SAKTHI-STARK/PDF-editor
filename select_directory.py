@@ -1,10 +1,16 @@
 import tkinter as tk
 from tkinter import filedialog
-#function for selecting the file source directory
-def select_file():
+#function for selecting more than one file from the file source directory
+def select_multiple_file():
     select_window = tk.Tk()
     select_window.withdraw()  # Hide the root window
     file_path = list(filedialog.askopenfilenames())
+    return file_path
+def select_file():
+    select_window = tk.Tk()
+    select_window.withdraw()  # Hide the root window
+    file_path =filedialog.askopenfilename()
+    
     return file_path
 #function to select the file saving directory
 def save_file():

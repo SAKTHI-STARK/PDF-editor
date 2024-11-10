@@ -1,7 +1,8 @@
 import tkinter as tk
 from tkinter import *
 from tkinter.font import Font
-
+import select_directory as sd
+import split_pdf as sp
 window = tk.Tk()
 
 # Function to create a new window for each functionality
@@ -11,16 +12,23 @@ def create_new_window(title):
     new_window.title(window_title)
     new_window.geometry("300x200")
     if title=="split Pdf":
-        Button_merge = Button(new_window, text="Select PDF", fg="RED", width=20, height=2)
+        def select_file():
+            file_path=sd.select_file()
+            print(file_path)
+           
+            def split_file(file_path):
+                sp.split_pdf(file_path,1,4)
+            split_file(file_path) 
+        Button_merge = Button(new_window, text="Select PDF", fg="RED", width=20, height=2,command=select_file)
         Button_merge.pack(pady=20)
-        start_page=tk.Label(new_window,text="start page no:")
-        start_page.pack()
-        start_pg_val=tk.Entry(new_window)
-        start_pg_val.place(x=120,y=25)
-        Button_merge = Button(new_window, text="Split PDF", fg="RED", width=20, height=2)
-        Button_merge.pack(pady=20)
-        Button_merge = Button(new_window, text="Save PDF", fg="RED", width=20, height=2)
-        Button_merge.pack(pady=20)
+        # start_page=tk.Label(new_window,text="start page no:")
+        # start_page.pack()
+        # start_pg_val=tk.Entry(new_window)
+        # start_pg_val.place(x=120,y=25)
+        # Button_merge = Button(new_window, text="Split PDF", fg="RED", width=20, height=2)
+        # Button_merge.pack(pady=20)
+        # Button_merge = Button(new_window, text="Save PDF", fg="RED", width=20, height=2)
+        # Button_merge.pack(pady=20)
         pass
     elif title=="Image to PDF":
         
