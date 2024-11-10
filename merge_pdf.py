@@ -21,7 +21,3 @@ def merge_pdfs(pdf_list):
         pdf_merger.append(pdf)
     with open(sd.save_file(), 'wb') as output_file:
         pdf_merger.write(output_file)
-
-
-select_pdf()
-add_pages()
