@@ -5,6 +5,7 @@ pdf_writer = PyPDF2.PdfWriter()
 def savefile():
     with open(sd.save_file(), 'wb') as output_file:
         pdf_writer.write(output_file)
+        output_file.close()
 # Function to split the PDF from a certain range to range
 def split_pdf(input_pdf, start_page, end_page):
     # Ensure input_pdf is a file path or file-like object
@@ -20,4 +21,5 @@ def split_pdf(input_pdf, start_page, end_page):
         pdf_writer.add_page(page)
     # Save the newly created PDF file
     savefile()
+    
 

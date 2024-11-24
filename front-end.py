@@ -73,9 +73,6 @@ def main_window(Name_app, author_name):
 def loading_window():
     window.geometry("400x200")
     window.configure(bg="blanchedalmond")
-    # icon for our app title
-    icon = PhotoImage(file="SV.png")
-    window.iconphoto(True, icon)
     window.title("PDF-EDITOR")
     # creating name for our app name
     App_name_font = Font(size=30, weight='bold')
