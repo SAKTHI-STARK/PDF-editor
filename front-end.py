@@ -4,6 +4,7 @@ from tkinter.font import Font
 import select_directory as sd
 import split_pdf as sp
 window = tk.Tk()
+
 # Function to create a new window for each functionality
 def create_new_window(title):
     new_window = Toplevel(window)
@@ -28,6 +29,8 @@ def create_new_window(title):
                 st_pg_val = int(start_page_val.get())
                 End_pg_val = int(End_page_val.get())
                 sp.split_pdf(input_pdf, st_pg_val, End_pg_val)
+                new_window.quit()
+            
             Button_convert = Button(new_window, text="Split PDF", fg="RED", width=20, height=2, command=split_pdf_command)
             Button_convert.pack(pady=20)
         #function for select the source pdf file
